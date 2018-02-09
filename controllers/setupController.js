@@ -1,8 +1,8 @@
 const Todos = require('../models/todoModel');
 
-module.exports = function (app) {
+module.exports = (app) => {
 
-  app.get('/api/setupTodos', function (req, res) {
+  app.get('/api/setupTodos', (req, res) => {
 
     //seed database
 
@@ -27,7 +27,7 @@ module.exports = function (app) {
       },
     ];
 
-    Todos.create (starterTodos, function (err, results) {
+    Todos.create (starterTodos, (err, results) => {
       res.send(results);
     });
 
